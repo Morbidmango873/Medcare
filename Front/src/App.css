@@ -1,0 +1,8 @@
+.app {
+  min-height: 100vh;
+  position: relative;
+}
+
+.page-content {
+  padding-top: 70px; /* Space for header */
+}

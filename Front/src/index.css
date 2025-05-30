@@ -1,0 +1,74 @@
+:root {
+  --bg-color: #fdf6ec;
+  --text-color: #333333;
+  --primary-color: #4a90e2; /* Blue for doctor circles */
+  --secondary-color: #4caf50; /* Green for specialty squares */
+  --accent-color: #e53935; /* Red for emergency */
+  --action-color: #8bc34a; /* Light green for action buttons */
+  --header-bg: #ffffff;
+  --card-bg: #ffffff;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  transition: background-color 0.3s, transform 0.1s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+input {
+  font-family: inherit;
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  border-radius: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.5em;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.page-content {
+  padding-top: 80px; /* Space for fixed header */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding: 0.5rem;
+  }
+}

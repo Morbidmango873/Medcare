@@ -1,0 +1,82 @@
+.home-page {
+  padding-bottom: 2rem;
+}
+
+.emergency-button {
+  display: block;
+  background-color: var(--accent-color);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 4px 6px rgba(229, 57, 53, 0.2);
+}
+
+.emergency-button:hover {
+  background-color: #c62828;
+  transform: translateY(-3px);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.view-all {
+  color: var(--primary-color);
+  font-size: 0.9rem;
+}
+
+.specialties-section, 
+.doctors-section {
+  margin-bottom: 2rem;
+}
+
+.specialties-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.doctors-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .specialties-grid,
+  .doctors-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .specialties-grid,
+  .doctors-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .specialties-grid,
+  .doctors-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .view-all {
+    margin-top: 0.5rem;
+  }
+}

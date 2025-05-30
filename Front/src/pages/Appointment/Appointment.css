@@ -1,0 +1,167 @@
+.appointment-page {
+  padding: 1rem 0 2rem;
+}
+
+.appointment-page h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}
+
+.appointment-doctor {
+  display: flex;
+  align-items: center;
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+}
+
+.doctor-avatar-small {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  margin-right: 1rem;
+}
+
+.doctor-info-small h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.3rem;
+}
+
+.doctor-info-small p {
+  color: #666;
+}
+
+.appointment-content {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.date-selection, 
+.time-selection {
+  margin-bottom: 2rem;
+}
+
+.date-selection h3,
+.time-selection h3 {
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.dates-grid {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.date-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.date-item.selected {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.date-day {
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+.date-number {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.time-slots {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.time-slot {
+  text-align: center;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.time-slot.selected {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.schedule-confirm-button {
+  display: block;
+  width: 100%;
+  background-color: var(--action-color);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 8px;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 4px 6px rgba(139, 195, 74, 0.2);
+}
+
+.schedule-confirm-button:not(:disabled):hover {
+  background-color: #7cb342;
+  transform: translateY(-3px);
+}
+
+.schedule-confirm-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.appointment-error {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.back-button {
+  display: inline-block;
+  margin-top: 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .time-slots {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .dates-grid {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .time-slots {
+    grid-template-columns: 1fr;
+  }
+}
