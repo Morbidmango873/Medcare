@@ -9,7 +9,7 @@ const Doctor = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:8800/medicos/${id}`)
+    fetch(`http://localhost:8800/medico/${id}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error('Erro ao buscar os dados do médico');

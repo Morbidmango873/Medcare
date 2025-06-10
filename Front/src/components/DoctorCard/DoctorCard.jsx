@@ -7,8 +7,8 @@ const DoctorCard = ({ doctor }) => {
     <Link to={`/medico/${doctor.id}`} className="doctor-card">
       <div className="doctor-avatar"></div>
       <div className="doctor-info">
-        <h3 className="doctor-name">{doctor.name}</h3>
-        <p className="doctor-specialty">{doctor.specialty}</p>
+        <h3 className="doctor-name">{doctor.nome}</h3>
+        <p className="doctor-specialty">{doctor.Especialidade}</p>
         <StarRating rating={doctor.rating} />
       </div>
     </Link>

@@ -3,18 +3,6 @@ import { useLocation } from 'react-router-dom';
 import DoctorCard from '../../components/DoctorCard/DoctorCard';
 import './Search.css';
 
-// Mock data - prepared for future MySQL integration
-const allDoctors = [
-  { id: 1, name: 'Dr. Carlos Silva', specialty: 'Cardiologia', rating: 4.5 },
-  { id: 2, name: 'Dra. Ana Souza', specialty: 'Ortopedia', rating: 5 },
-  { id: 3, name: 'Dr. Roberto Mendes', specialty: 'Pediatria', rating: 4 },
-  { id: 4, name: 'Dra. Mariana Costa', specialty: 'Dermatologia', rating: 4.8 },
-  { id: 5, name: 'Dra. Beatriz Almeida', specialty: 'Cardiologia', rating: 4.7 },
-  { id: 6, name: 'Dr. Ricardo Santos', specialty: 'Ortopedia', rating: 4.8 },
-  { id: 7, name: 'Dra. Carla Oliveira', specialty: 'Pediatria', rating: 4.9 },
-  { id: 8, name: 'Dr. Lucas Ferreira', specialty: 'Dermatologia', rating: 4.3 },
-];
-
 const Search = () => {
   const location = useLocation();
   const [searchQuery, setSearchQuery] = useState('');
@@ -24,16 +12,22 @@ const Search = () => {
     const queryParams = new URLSearchParams(location.search);
     const query = queryParams.get('q') || '';
     setSearchQuery(query);
-    
-    if (query) {
-      const results = allDoctors.filter(doctor => 
-        doctor.name.toLowerCase().includes(query.toLowerCase()) || 
-        doctor.specialty.toLowerCase().includes(query.toLowerCase())
-      );
-      setSearchResults(results);
-    } else {
-      setSearchResults(allDoctors);
-    }
+
+    const fetchDoctors = async () => {
+      try {
+        const url = query 
+          ? `http://localhost:8800/search?q=${encodeURIComponent(query)}`
+          : 'http://localhost:8800/select';
+
+        const res = await fetch(url);
+        const data = await res.json();
+        setSearchResults(data);
+      } catch (error) {
+        console.error('Erro ao buscar médicos:', error);
+      }
+    };
+
+    fetchDoctors();
   }, [location.search]);
 
   return (
